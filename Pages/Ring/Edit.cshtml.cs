@@ -23,7 +23,14 @@ namespace Power.Pages.Ring
                 return NotFound();
             }
 
-            return RedirectToAction("Index");
+            Ring = await _service.GetById(id.Value);
+
+            if (Ring == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -41,8 +48,7 @@ namespace Power.Pages.Ring
         private bool RingExists(Guid id)
         {
             var ring = _service.GetById(id);
-
-            return true;
+            return ring != null;
         }
     }
 }
