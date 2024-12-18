@@ -1,0 +1,43 @@
+﻿@page
+@model Power.Pages.Ring.DetailsModel
+
+<div>
+    <h4>Ring</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ring.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ring.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ring.Power)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ring.Power)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ring.Carrier)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ring.Carrier)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ring.ForgedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ring.ForgedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ring.Image)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Ring.Image"/>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Ring.Id" class="btn btn-secondary">Editar</a> |
+    <a asp-page="./Index" class="btn btn-primary">Voltar para Listagem</a>
+</div>

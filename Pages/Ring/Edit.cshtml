@@ -1,0 +1,49 @@
+﻿@page
+@model Power.Pages.Ring.EditModel
+
+<h4>Ring</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Ring.Id" />
+            <div class="form-group">
+                <label asp-for="Ring.Name" class="control-label"></label>
+                <input asp-for="Ring.Name" class="form-control" />
+                <span asp-validation-for="Ring.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ring.Power" class="control-label"></label>
+                <input asp-for="Ring.Power" class="form-control" />
+                <span asp-validation-for="Ring.Power" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ring.Carrier" class="control-label"></label>
+                <input asp-for="Ring.Carrier" class="form-control" />
+                <span asp-validation-for="Ring.Carrier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ring.ForgedBy" class="control-label"></label>
+                <select asp-for="Ring.ForgedBy" class="form-control"></select>
+                <span asp-validation-for="Ring.ForgedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ring.Image" class="control-label"></label>
+                <input asp-for="Ring.Image" class="form-control" />
+                <span asp-validation-for="Ring.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-lg btn-primary">Voltar para Listagem</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
