@@ -18,7 +18,7 @@ namespace Power.Pages.Ring
         }
 
         [BindProperty]
-        public Domain.RingsAggregate.Entities.Ring Ring { get; set; } = default!;
+        public Domain.RingsAggregate.Entities.Ring Ring { get; set; }
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -49,6 +49,7 @@ namespace Power.Pages.Ring
         {
             if (!ModelState.IsValid)
             {
+                ViewData["ForgedByList"] = new SelectList(Enum.GetValues(typeof(ForgedBy)));
                 return Page();
             }
 
