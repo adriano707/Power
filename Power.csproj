@@ -25,4 +25,9 @@
     <ProjectReference Include="..\Power.Domain\Power.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
